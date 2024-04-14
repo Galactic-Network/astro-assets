@@ -218,7 +218,7 @@
   </header>
   <div id="game-container">
     <iframe id="gameFramey">your browser doesn't support iframes. loser!</iframe>
-      <center><a href="#" class="abc">Fullscreen</a></center>
+      <center><a href="#" class="back-button" class="abc">Fullscreen</a></center>
   </div>
   <script>
     var iframe = document.getElementById("gameFramey");
@@ -235,6 +235,30 @@ c   backButton.addEventListener('click', () => {
       document.getElementById('gameFramey').src = 'https://raw.githack.com/BinBashBanana/gfiles/master/gfiles/html5/' + file + '/index.html'
     } else {
       document.getElementById('gameFramey').src = "https://raw.githack.com/BinBashBanana/gfiles/master/gfiles/flash/index.html?swf=" + file
+    }
+  </script>
+    <script>
+    function toggleFullscreen() {
+      let elem = document.querySelector('.abc');
+
+      if (!document.fullscreenElement) {
+        elem.requestFullscreen().catch((err) => {
+          alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+        });
+      } else {
+        document.exitFullscreen();
+      }
+    }
+    function toggleFullscreen() {
+      let elem = document.querySelector('.abc');
+
+      if (!document.fullscreenElement) {
+        elem.requestFullscreen().catch((err) => {
+          alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+        });
+      } else {
+        document.exitFullscreen();
+      }
     }
   </script>
 </body>
